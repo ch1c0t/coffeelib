@@ -1,1 +1,0 @@
-exports.some = -> 'some string'
