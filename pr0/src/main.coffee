@@ -1,0 +1,1 @@
+exports.some = -> 'some string'
