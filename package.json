@@ -1,7 +1,7 @@
 {
   "name": "coffeelib",
   "bin": "./bin/coffeelib",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "build": "coffee --compile --output lib src",
     "start": "coffee --watch --compile --output lib src",
