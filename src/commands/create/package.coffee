@@ -11,12 +11,15 @@ exports.CreatePackageFile = ({ name }) ->
     author: "Anatoly Chernov <chertoly@gmail.com>"
     description: "left as an exercise to the reader"
     license: "0BSD"
+    keywords: [
+      'coffeescript'
+    ]
     scripts:
       build: "coffeelib build"
       start: "coffeelib watch"
       test: "jasmine"
     devDependencies:
-      coffeelib: "file:.."
+      coffeelib: "^0.0.0"
       jasmine: "^3.9.0"
 
   source = JSON.stringify spec, null, 2
