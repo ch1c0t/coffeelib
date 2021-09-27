@@ -1,6 +1,6 @@
 { compile } = require 'coffeescript'
 
-exports.BuildMain = ->
+BuildMain = ->
   source = await IO.read "#{SRC}/main.coffee"
   output = compile source
   IO.write "#{LIB}/main.js", output
@@ -23,3 +23,5 @@ FindNames = (source) ->
       line.startsWith 'exports.'
     .map (line) ->
       line.split(' ')[0].split('.')[1]
+
+module.exports = { BuildMain, FindNames }
