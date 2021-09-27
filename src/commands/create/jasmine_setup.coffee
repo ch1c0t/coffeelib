@@ -12,12 +12,12 @@ CreateSomeSpec = ({ name, directory }) ->
   source = """
     { some } = require '#{name}'
 
-    describe 'some', ->
+    describe 'main', ->
       it 'returns some string', ->
         string = some()
         expect(string).toBe 'some string'
   """
 
-  IO.write "#{directory}/some.spec.coffee", source
+  IO.write "#{directory}/main.spec.coffee", source
 
 module.exports = { CreateJasmineSetup }
