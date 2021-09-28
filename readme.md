@@ -6,7 +6,7 @@
 npm install coffeelib -g
 ```
 
-and the use
+and then use
 
 ```
 coffeelib new NAME

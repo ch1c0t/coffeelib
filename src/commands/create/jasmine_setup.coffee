@@ -6,7 +6,21 @@ CreateJasmineSetup = ({ name, directory }) ->
   await CreateSomeSpec { name, directory }
 
 CreateSupport = ({ directory }) ->
-  await sh "cp -r #{ROOT}/spec/support #{directory}"
+  await IO.ensure directory
+  await IO.write "#{directory}/coffee.js", "require('coffeescript/register')"
+
+  config =
+    spec_dirs: 'spec'
+    spec_files: [
+      '**/*.spec.coffee'
+    ]
+    helpers: [
+      'support/coffee.js'
+      'helpers/**/*.coffee'
+    ]
+    stopSpecOnExpectationFailure: no
+    random: yes
+  await IO.write "#{directory}/jasmine.json", (JSON.stringify config, null, 2)
 
 CreateSomeSpec = ({ name, directory }) ->
   source = """
