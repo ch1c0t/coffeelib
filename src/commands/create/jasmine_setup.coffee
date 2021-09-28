@@ -10,7 +10,7 @@ CreateSupport = ({ directory }) ->
   await IO.write "#{directory}/coffee.js", "require('coffeescript/register')"
 
   config =
-    spec_dirs: 'spec'
+    spec_dir: 'spec'
     spec_files: [
       '**/*.spec.coffee'
     ]
