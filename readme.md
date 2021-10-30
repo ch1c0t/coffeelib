@@ -28,7 +28,8 @@ is to run the tests. `coffeelib` creates all new libraries with a basic function
 
 is to build the library. It compiles the sources in the `src` directory to the `lib` directory.
 
-It creates automatically [a ES module wrapper for a CommonJS module][wrapper]. This makes it easier to use the library both in Node.js and Webpack.
+It creates automatically [a ES module wrapper for a CommonJS module][wrapper].
+This allows to use the library both with `require` and `import`.
 
 [wrapper]: https://nodejs.org/api/packages.html#packages_writing_dual_packages_while_avoiding_or_minimizing_hazards
 
