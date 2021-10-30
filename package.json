@@ -2,7 +2,7 @@
   "name": "coffeelib",
   "description": "A tool to create isomorphic libraries with CoffeeScript",
   "bin": "./bin/coffeelib",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Anatoly Chernov <chertoly@gmail.com>",
   "license": "BSD0",
   "repository": {

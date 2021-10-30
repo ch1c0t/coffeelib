@@ -37,6 +37,12 @@ This allows to use the library both with `require` and `import`.
 
 is to rebuild the library when the sources in the `src` directory change.
 
+## Usage examples
+
+- https://github.com/ch1c0t/fun
+- https://github.com/ch1c0t/pascalize.lispcase
+- https://github.com/ch1c0t/hyphenate.pascalcase
+
 ## Development
 
 To work on `coffeelib` itself, you can use the following commands.
