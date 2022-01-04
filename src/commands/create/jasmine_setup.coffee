@@ -19,6 +19,7 @@ CreateSupport = ({ directory }) ->
       'helpers/**/*.coffee'
     ]
     stopSpecOnExpectationFailure: no
+    jsLoader: 'require'
     random: yes
   await IO.write "#{directory}/jasmine.json", (JSON.stringify config, null, 2)
 

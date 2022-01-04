@@ -8,5 +8,6 @@
     "helpers/**/*.coffee"
   ],
   "stopSpecOnExpectationFailure": false,
+  "jsLoader": "require",
   "random": true
 }
