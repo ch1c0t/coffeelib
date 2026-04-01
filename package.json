@@ -26,6 +26,6 @@
     "glob": "^13.0.6"
   },
   "devDependencies": {
-    "jasmine": "^5.4.0"
+    "jasmine": "^6.1.0"
   }
 }

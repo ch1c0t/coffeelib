@@ -22,7 +22,7 @@ exports.CreatePackageFile = ({ name }) ->
       test: "jasmine"
     devDependencies:
       coffeelib: "^#{version}"
-      jasmine: "^5.4.0"
+      jasmine: "^6.1.0"
 
   source = JSON.stringify spec, null, 2
   IO.write "#{DIR}/package.json", source
