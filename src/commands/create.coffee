@@ -4,6 +4,7 @@ path = require 'path'
 { CreateSrc } = require './create/src'
 { CreateIgnoringFiles } = require './create/ignoring'
 { CreateJasmineSetup } = require './create/jasmine_setup'
+{ RunCommands } = require './create/run_commands'
 
 CWD = process.cwd()
 global.ROOT = path.dirname path.dirname __dirname
@@ -21,7 +22,4 @@ exports.create = (name) ->
   await CreateSrc { name, directory: "#{DIR}/src" }
   await CreateJasmineSetup { name, directory: "#{DIR}/spec" }
   await CreateIgnoringFiles()
-
-  { sh } = require '@ch1c0t/sh'
-  await sh 'npm install', cwd: DIR
-  await sh 'npm run build', cwd: DIR
+  await RunCommands()
