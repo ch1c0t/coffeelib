@@ -8,7 +8,6 @@ run = ->
 
   ENV.jasmine.execute()
     .then (info) ->
-      p info
       if info.overallStatus is 'failed'
         process.exit 3
 
