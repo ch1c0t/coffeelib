@@ -1,12 +1,5 @@
 #!/usr/bin/env node
 
 var path = require('path')
-var fs   = require('fs')
-
-var root = path.join(process.cwd(), 'node_modules/coffeelib/lib')
-
-if (!fs.existsSync(root)) {
-  root = path.join(__dirname, '../lib')
-}
-
+root = path.join(__dirname, '../lib')
 require(root + '/cli').run()

@@ -7,7 +7,7 @@ chokidar = require 'chokidar'
 exports.watch = ->
   await build()
 
-  watcher = chokidar.watch "#{SRC}/**/*.coffee"
+  watcher = chokidar.watch SRC
   watcher.on 'all', (event, path) ->
     if event in ['add', 'change']
       switch path
