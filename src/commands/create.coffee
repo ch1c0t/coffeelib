@@ -1,15 +1,12 @@
 path = require 'path'
 
-{ CreatePackageFile } = require './create/package'
-{ CreateSrc } = require './create/src'
-{ CreateIgnoringFiles } = require './create/ignoring'
-{ CreateJasmineSetup } = require './create/jasmine_setup'
-{ RunCommands } = require './create/run_commands'
+{ CreateFileTree } = require './create/CreateFileTree'
+{ RunCommands } = require './create/RunCommands'
 
 CWD = process.cwd()
 global.ROOT = path.dirname path.dirname __dirname
 
-exports.create = (name) ->
+CreateProjectDirectory = (name) ->
   global.DIR = "#{CWD}/#{name}"
 
   if IO.exist DIR
@@ -18,8 +15,15 @@ exports.create = (name) ->
   else
     await IO.mkdir DIR
 
-  await CreatePackageFile { name }
-  await CreateSrc { name, directory: "#{DIR}/src" }
-  await CreateJasmineSetup { name, directory: "#{DIR}/spec" }
-  await CreateIgnoringFiles()
+package_spec = require '../../package.json'
+{ version } = package_spec
+
+exports.create = (name) ->
+  await CreateProjectDirectory name
+
+  await CreateFileTree {
+    name
+    version
+  }
+
   await RunCommands()

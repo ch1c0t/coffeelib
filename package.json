@@ -14,7 +14,7 @@
     "isomorphic"
   ],
   "scripts": {
-    "build": "coffee --compile --output lib src",
+    "build": "coffee scripts/compile.coffee",
     "start": "coffee --watch --compile --output lib src",
     "test": "jasmine"
   },
