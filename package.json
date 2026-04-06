@@ -15,8 +15,8 @@
   ],
   "scripts": {
     "build": "coffee scripts/compile.coffee",
-    "start": "coffee --watch --compile --output lib src",
-    "test": "jasmine"
+    "start": "coffee scripts/watch.coffee",
+    "test": "coffee scripts/run_specs.coffee"
   },
   "dependencies": {
     "@ch1c0t/io": "^0.0.5",
