@@ -11,4 +11,4 @@ config =
   jsLoader: 'require'
   random: yes
 
-JSON.stringify config, null, 2
+jsonify config

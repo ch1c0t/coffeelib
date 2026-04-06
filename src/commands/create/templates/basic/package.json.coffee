@@ -19,4 +19,4 @@ spec =
     coffeelib: "^#{version}"
     jasmine: "^6.1.0"
 
-JSON.stringify spec, null, 2
+jsonify spec
