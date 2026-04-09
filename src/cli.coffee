@@ -11,7 +11,8 @@ exports.run = ->
     when 'new'
       { create } = require './commands/create'
       name = process.argv[3]
-      create name
+      template = process.argv[4]
+      create { name, template }
     when 'watch'
       { watch } = require './commands/watch'
       watch()

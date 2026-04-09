@@ -5,21 +5,24 @@ glob = require 'glob'
 require './jsonify'
 
 exports.CreateFileTree = (variables) ->
-  { name, version } = variables
+  { name, version, template } = variables
 
-  templateName = 'basic'
-  templatePath = "#{ROOT}/lib/commands/create/templates/#{templateName}"
+  templatePath = "#{ROOT}/lib/commands/create/templates/#{template}"
 
-  files = glob.sync "#{templatePath}/**/*", nodir: yes
-  for file in files
-    pathToNewFile = DerivePathToNewFile { file, prefix_to_remove: "#{templatePath}/"}
-    await IO.ensure dirname pathToNewFile
+  if await IO.exist templatePath
+    files = glob.sync "#{templatePath}/**/*", nodir: yes
+    for file in files
+      pathToNewFile = DerivePathToNewFile { file, prefix_to_remove: "#{templatePath}/"}
+      await IO.ensure dirname pathToNewFile
 
-    if file.endsWith '.js'
-      code = await IO.read file
-      output = eval code
-      await IO.write pathToNewFile, output
-    else
-      await IO.copy file, pathToNewFile
+      if file.endsWith '.js'
+        code = await IO.read file
+        output = eval code
+        await IO.write pathToNewFile, output
+      else
+        await IO.copy file, pathToNewFile
 
-    console.log pathToNewFile
+      console.log pathToNewFile
+  else
+    console.error "No template directory was found at #{templatePath}"
+    process.exit 1

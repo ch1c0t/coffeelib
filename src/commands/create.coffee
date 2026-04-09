@@ -18,11 +18,12 @@ CreateProjectDirectory = (name) ->
 package_spec = require '../../package.json'
 { version } = package_spec
 
-exports.create = (name) ->
+exports.create = ({ name, template = 'basic' }) ->
   await CreateProjectDirectory name
 
   await CreateFileTree {
     name
+    template
     version
   }
 

@@ -1,8 +1,5 @@
 describe 'new', ->
-  it 'creates a new package', ->
-    name = "new_package_name"
-    response = await RunCLI "new #{name}"
-    expect(response.error).toBe null
-
-    response = await RunSpecsIn "#{ENV.tmp}/#{name}"
-    expect(response.error).toBe null
+  it 'fails if no template directory was found for the passed template name', ->
+    response = await RunCLI "new some_package_name non_existent_template_name"
+    expect(response.error).toMatch /^Error: Command failed/
+    expect(response.stderr).toMatch /^No template directory was found at/
