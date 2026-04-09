@@ -21,3 +21,5 @@ exports.CreateFileTree = (variables) ->
       await IO.write pathToNewFile, output
     else
       await IO.copy file, pathToNewFile
+
+    console.log pathToNewFile
