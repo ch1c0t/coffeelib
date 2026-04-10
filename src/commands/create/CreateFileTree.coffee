@@ -1,4 +1,4 @@
-{ dirname } = require 'path'
+{ dirname, join } = require 'path'
 glob = require 'glob'
 
 { DerivePathToNewFile } = require './DerivePathToNewFile'
@@ -13,12 +13,20 @@ exports.CreateFileTree = (variables) ->
     files = glob.sync "#{templatePath}/**/*", nodir: yes
     for file in files
       pathToNewFile = DerivePathToNewFile { file, prefix_to_remove: "#{templatePath}/"}
-      await IO.ensure dirname pathToNewFile
+      dirToNewFile = dirname pathToNewFile
+      await IO.ensure dirToNewFile
 
       if file.endsWith '.js'
         code = await IO.read file
         output = eval code
-        await IO.write pathToNewFile, output
+
+        if text = output.text
+          if filename = output.filename
+            pathToNewFile = join dirToNewFile, filename
+        else
+          text = output
+
+        await IO.write pathToNewFile, text
       else
         await IO.copy file, pathToNewFile
 
