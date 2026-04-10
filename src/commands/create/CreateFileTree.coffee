@@ -1,6 +1,7 @@
 { dirname, join } = require 'path'
 glob = require 'glob'
 
+{ CreateProjectDirectory } = require './CreateProjectDirectory'
 { DerivePathToNewFile } = require './DerivePathToNewFile'
 require './helpers'
 
@@ -10,6 +11,7 @@ exports.CreateFileTree = (variables) ->
   templatePath = "#{ROOT}/lib/commands/create/templates/#{template}"
 
   if await IO.exist templatePath
+    await CreateProjectDirectory name
     files = glob.sync "#{templatePath}/**/*", nodir: yes
     for file in files
       pathToNewFile = DerivePathToNewFile { file, prefix_to_remove: "#{templatePath}/"}
