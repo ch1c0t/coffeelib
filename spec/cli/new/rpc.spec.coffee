@@ -1,11 +1,6 @@
 describe 'new rpc', ->
-  it 'creates a new package', ->
-    name = "coffee.rpc"
-    response = await RunCLI "new #{name} rpc"
-    expect(response.error).toBe null
-    
-    rpc_cli_file = "#{ENV.tmp}/#{name}/bin/#{name}"
-    expect(rpc_cli_file).toExistAsFile()
+  beforeAll ->
+    @name = "rpc_package"
+    @response = await RunCLI "new #{@name} rpc"
 
-    # response = await RunSpecsIn "#{ENV.tmp}/#{name}"
-    # expect(response.error).toBe null
+  ItCreatesPackageWithCLI()

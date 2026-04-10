@@ -1,6 +1,6 @@
 describe 'new basic', ->
   it 'creates a new package', ->
-    name = "new_package_name"
+    name = "basic_package"
     response = await RunCLI "new #{name}"
     expect(response.error).toBe null
 
