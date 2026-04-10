@@ -2,7 +2,7 @@
 glob = require 'glob'
 
 { DerivePathToNewFile } = require './DerivePathToNewFile'
-require './jsonify'
+require './helpers'
 
 exports.CreateFileTree = (variables) ->
   { name, version, template } = variables
