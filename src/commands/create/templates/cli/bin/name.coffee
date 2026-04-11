@@ -1,3 +1,4 @@
+executable = yes
 filename = name
 text = """
 #!/usr/bin/env node
@@ -8,6 +9,7 @@ require(root + '/cli').run()
 """
 
 {
+  executable
   filename
   text
 }

@@ -10,8 +10,7 @@ exports.run = ->
   switch command
     when 'new'
       { create } = require './commands/create'
-      name = process.argv[3]
-      template = process.argv[4]
+      [name, template] = process.argv[3..4]
       create { name, template }
     when 'watch'
       { watch } = require './commands/watch'

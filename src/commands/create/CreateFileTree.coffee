@@ -1,4 +1,5 @@
 { dirname, join } = require 'path'
+{ sh } = require '@ch1c0t/sh'
 glob = require 'glob'
 
 { CreateProjectDirectory } = require './CreateProjectDirectory'
@@ -29,6 +30,8 @@ exports.CreateFileTree = (variables) ->
           text = output
 
         await IO.write pathToNewFile, text
+        if output.executable
+          await sh "chmod +x #{pathToNewFile}"
       else
         await IO.copy file, pathToNewFile
 

@@ -1,0 +1,3 @@
+"""
+exports.some = -> 'some string'
+"""
