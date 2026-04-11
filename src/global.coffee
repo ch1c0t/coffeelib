@@ -5,4 +5,11 @@ global.SRC = "#{CWD}/src"
 global.LIB = "#{CWD}/lib"
 
 { dirname } = require 'path'
-global.ROOT = dirname __dirname
+
+package_spec = require '../package.json'
+{ version } = package_spec
+
+global.COFFEELIB = global.coffeelib = {
+  version
+  path: dirname __dirname
+}

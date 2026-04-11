@@ -7,7 +7,7 @@
 require './helpers'
 
 exports.CreateFileTree = (variables) ->
-  { name, version, template } = variables
+  { name, template } = variables
   template = Template template
 
   if template.exists

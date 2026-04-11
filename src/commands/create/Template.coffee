@@ -5,7 +5,7 @@ glob = require 'glob'
 exports.Template = bow
   init: (name) ->
     @name = name
-    @path = "#{ROOT}/lib/commands/create/templates/#{name}"
+    @path = "#{COFFEELIB.path}/lib/commands/create/templates/#{name}"
     
     if existsSync @path
       @exists = true
