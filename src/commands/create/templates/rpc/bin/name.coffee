@@ -1,5 +1,5 @@
 executable = yes
-filename = name
+filename = project.name
 text = """
 #!/usr/bin/env node
 

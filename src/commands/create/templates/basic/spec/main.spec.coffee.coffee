@@ -1,5 +1,5 @@
 """
-{ some } = require '#{name}'
+{ some } = require '#{project.name}'
 
 describe 'main', ->
   it 'returns some string', ->

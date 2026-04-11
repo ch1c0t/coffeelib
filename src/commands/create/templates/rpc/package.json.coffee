@@ -1,5 +1,5 @@
 spec =
-  name: name
+  name: project.name
   main: "./lib/main.js"
   exports:
     require: "./lib/main.js"
