@@ -18,3 +18,7 @@ global.ItCreatesPackageWithCLI = ->
       version             Print the version.
       help                Show this message.
     """
+
+  it 'prints the version', ->
+    response = await sh "#{@cli} version"
+    expect(response.stdout.trim()).toBe '0.0.0'
