@@ -1,6 +1,5 @@
 { dirname, join } = require 'path'
 { sh } = require '@ch1c0t/sh'
-glob = require 'glob'
 
 { Template } = require './Template'
 { CreateProjectDirectory } = require './CreateProjectDirectory'
@@ -13,8 +12,7 @@ exports.CreateFileTree = (variables) ->
 
   if template.exists
     await CreateProjectDirectory name
-    files = glob.sync "#{template.path}/**/*", nodir: yes
-    for file in files
+    for file in template.files
       pathToNewFile = DerivePathToNewFile { file, prefix_to_remove: "#{template.path}/"}
       dirToNewFile = dirname pathToNewFile
       await IO.ensure dirToNewFile
