@@ -1,5 +1,4 @@
-{ dirname, join } = require 'path'
-{ DerivePathToNewFile } = require './DerivePathToNewFile'
+{ ProjectFile } = require './ProjectFile'
 require './helpers'
 
 exports.Project = bow
@@ -8,26 +7,24 @@ exports.Project = bow
     template: -> @value
     dir: -> @value
   methods:
-    create_new_file_from: (file) ->
-      pathToNewFile = DerivePathToNewFile { file, prefix_to_remove: "#{@template.path}/"}
-      dirToNewFile = dirname pathToNewFile
-      await IO.ensure dirToNewFile
+    create_new_file_from: (template_file) ->
+      project_file = ProjectFile template_file.transpose_to @dir
 
-      if file.endsWith '.js'
-        code = await IO.read file
+      if template_file.endsWith '.js'
+        code = await template_file.read()
         project = @
         output = eval code
 
         if text = output.text
           if filename = output.filename
-            pathToNewFile = join dirToNewFile, filename
+            project_file.change_filename_to filename
         else
           text = output
 
-        await IO.write pathToNewFile, text
+        await project_file.write text
         if output.executable
-          await sh "chmod +x #{pathToNewFile}"
+          await sh "chmod +x #{project_file.path}"
       else
-        await IO.copy file, pathToNewFile
+        await project_file.copy template_file.path
 
-      pathToNewFile
+      project_file.path
