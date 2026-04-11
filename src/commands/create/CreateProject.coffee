@@ -1,13 +1,12 @@
 { Project } = require './Project'
 
 exports.CreateProject = ({ name, template }) ->
-  global.DIR = "#{CWD}/#{name}"
+  dir = "#{CWD}/#{name}"
 
-  if IO.exist DIR
-    console.error "#{DIR} already exists."
+  if IO.exist dir
+    console.error "#{dir} already exists."
     process.exit 1
   else
-    await IO.mkdir DIR
+    await IO.mkdir dir
 
-  dir = DIR
   Project { name, template, dir }

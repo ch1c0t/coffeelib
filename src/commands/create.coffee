@@ -8,9 +8,10 @@ global.bow = bow
 { RunCommands } = require './create/RunCommands'
 
 exports.create = ({ name, template = 'basic' }) ->
-  await CreateFileTree {
+  dir = await CreateFileTree {
     name
     template
   }
 
-  await RunCommands()
+  await RunCommands
+    inside_of: dir

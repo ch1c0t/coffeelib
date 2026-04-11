@@ -10,6 +10,7 @@ exports.CreateFileTree = (variables) ->
     for file in template.files
       pathToNewFile = project.create_new_file_from file
       console.log pathToNewFile
+    project.dir
   else
     console.error template.error
     process.exit 1
