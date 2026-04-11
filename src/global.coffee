@@ -13,3 +13,5 @@ global.COFFEELIB = global.coffeelib = {
   version
   path: dirname __dirname
 }
+
+global.glob = require 'glob'

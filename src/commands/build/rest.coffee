@@ -1,5 +1,4 @@
 coffee = require 'coffeescript'
-glob = require 'glob'
 
 { dirname } = require 'path'
 
