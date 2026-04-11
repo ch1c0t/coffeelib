@@ -1,7 +1,7 @@
 { dirname, join } = require 'path'
 
 { Template } = require './Template'
-{ CreateProjectDirectory } = require './CreateProjectDirectory'
+{ CreateProject } = require './CreateProject'
 { DerivePathToNewFile } = require './DerivePathToNewFile'
 require './helpers'
 
@@ -10,7 +10,7 @@ exports.CreateFileTree = (variables) ->
   template = Template template
 
   if template.exists
-    await CreateProjectDirectory name
+    project = await CreateProject { name, template }
     for file in template.files
       pathToNewFile = DerivePathToNewFile { file, prefix_to_remove: "#{template.path}/"}
       dirToNewFile = dirname pathToNewFile

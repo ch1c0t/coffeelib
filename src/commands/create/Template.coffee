@@ -1,5 +1,4 @@
 { existsSync } = require 'fs'
-{ bow } = require '@ch1c0t/bow'
 
 exports.Template = bow
   init: (name) ->
