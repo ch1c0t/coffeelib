@@ -1,5 +1,4 @@
 { dirname, join } = require 'path'
-{ sh } = require '@ch1c0t/sh'
 
 { Template } = require './Template'
 { CreateProjectDirectory } = require './CreateProjectDirectory'
