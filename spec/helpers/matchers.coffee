@@ -1,3 +1,5 @@
+{ sh } = require '@ch1c0t/sh'
+
 beforeAll ->
   jasmine.addMatchers
     toExistAsFile: ->
@@ -28,4 +30,11 @@ beforeAll ->
               "Expected '#{string}' not to end with '#{suffix}'"
             else
               "Expected '#{string}' to end with '#{suffix}'"
+        }
+    toPassInsideOf: ->
+      compare: (command, directory) ->
+        response = await sh(command, cwd: directory)
+        pass = response.error is null
+        {
+          pass
         }
