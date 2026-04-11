@@ -2,20 +2,20 @@
 { sh } = require '@ch1c0t/sh'
 glob = require 'glob'
 
+{ Template } = require './Template'
 { CreateProjectDirectory } = require './CreateProjectDirectory'
 { DerivePathToNewFile } = require './DerivePathToNewFile'
 require './helpers'
 
 exports.CreateFileTree = (variables) ->
   { name, version, template } = variables
+  template = Template template
 
-  templatePath = "#{ROOT}/lib/commands/create/templates/#{template}"
-
-  if await IO.exist templatePath
+  if template.exists
     await CreateProjectDirectory name
-    files = glob.sync "#{templatePath}/**/*", nodir: yes
+    files = glob.sync "#{template.path}/**/*", nodir: yes
     for file in files
-      pathToNewFile = DerivePathToNewFile { file, prefix_to_remove: "#{templatePath}/"}
+      pathToNewFile = DerivePathToNewFile { file, prefix_to_remove: "#{template.path}/"}
       dirToNewFile = dirname pathToNewFile
       await IO.ensure dirToNewFile
 
@@ -37,5 +37,5 @@ exports.CreateFileTree = (variables) ->
 
       console.log pathToNewFile
   else
-    console.error "No template directory was found at #{templatePath}"
+    console.error template.error
     process.exit 1
