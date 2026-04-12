@@ -1,3 +1,7 @@
 """
-exports.some = -> 'some string'
+{ version } = require './commands/version'
+
+module.exports = {
+  version
+}
 """
