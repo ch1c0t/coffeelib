@@ -1,20 +1,26 @@
 ## Introduction
 
-`coffeelib` is a tool to create isomorphic libraries with CoffeeScript. You can install it globally with
+`coffeelib` is a tool to create isomorphic projects with CoffeeScript. You can install it globally with
 
 ```
 npm install coffeelib -g
 ```
 
-and then use
+## Usage
 
-```
-coffeelib new NAME
-```
+### `coffeelib new NAME [TEMPLATE]`
 
-to create a directory named NAME and a new library inside of it. For example, `coffeelib new name0`.
+creates a directory named NAME and a new project inside of it.
 
-After entering the directory with `cd name0`, you can use
+TEMPLATE determines what kind of project will be created.
+Omitting TEMPLATE, as in `coffeelib new name`, creates a basic CoffeeScript library.
+
+Specifying TEMPLATE, as in `coffeelib new name cli`, creates a CLI project.
+It provides a CLI which implements common commands(like `help`, `version`, `-v`, `--version`),
+and a setup based on [Jasmine](https://jasmine.github.io/), which shows how to test these commands.
+This makes adding new commands easier.
+
+Inside of a project directory, you can use
 
 - `npm test`;
 - `coffeelib build`;
@@ -22,11 +28,11 @@ After entering the directory with `cd name0`, you can use
 
 ### `npm test`
 
-is to run the tests. `coffeelib` creates all new libraries with a basic function and a basic test for it.
+is to run the tests. All `coffeelib` templates go together with means to create test environments.
 
-### `coffeelib build`
+### `coffeelib build`(or `npm run build`)
 
-is to build the library. It compiles the sources in the `src` directory to the `lib` directory.
+is to build the project. It compiles the sources in the `src` directory to the `lib` directory.
 
 It creates automatically [a ES module wrapper for a CommonJS module][wrapper].
 This allows to use the library both with `require` and `import`.
@@ -35,9 +41,10 @@ This allows to use the library both with `require` and `import`.
 
 ### `coffeelib watch`(or `npm start`)
 
-is to rebuild the library when the sources in the `src` directory change.
+is to build the project on startup, and then
+rebuild it when the sources in the `src` directory change.
 
-## Usage examples
+### Usage examples
 
 - https://github.com/ch1c0t/fun
 - https://github.com/ch1c0t/pascalize.lispcase

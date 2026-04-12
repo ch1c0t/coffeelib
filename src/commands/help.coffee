@@ -1,10 +1,22 @@
 exports.printHelp = ->
   console.log """
-    A tool to create isomorphic libraries with CoffeeScript.
+    A tool to create isomorphic projects with CoffeeScript.
 
-      new NAME            Create the directory named NAME and a new library inside of it.
-      watch               Start a development session in the current directory.
-      build               Build the project in the current directory.
-      version             Print the version.
-      help                Show this message.
+      new NAME [TEMPLATE]
+        Create the directory named NAME and a new project inside of it.
+        TEMPLATE determines what kind of project will be created.
+          Omitting TEMPLATE, as in
+            coffeelib new name
+              creates a basic CoffeeScript library.
+          Specifying TEMPLATE, as in
+            coffeelib new name cli
+              creates a CLI project.
+      watch
+        Start a development session in the current directory.
+      build
+        Build the project in the current directory.
+      version
+        Print the version.
+      help
+        Show this message.
   """
