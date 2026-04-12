@@ -20,14 +20,14 @@
   },
   "dependencies": {
     "@ch1c0t/bow": "^0.0.0",
-    "@ch1c0t/io": "^0.0.5",
+    "@ch1c0t/io": "^0.0.7",
     "@ch1c0t/sh": "^0.0.1",
     "chokidar": "^4.0.3",
     "coffeescript": "^2.7.0",
     "glob": "^13.0.6"
   },
   "devDependencies": {
-    "@ch1c0t/ext": "^0.2.0",
+    "@ch1c0t/ext": "^0.2.2",
     "jasmine": "^6.1.0"
   }
 }

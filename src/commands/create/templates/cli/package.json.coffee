@@ -14,9 +14,10 @@ spec =
   scripts:
     build: "coffeelib build"
     start: "coffeelib watch"
-    test: "jasmine"
+    test: "coffee scripts/run_specs.coffee"
   devDependencies:
     coffeelib: "^#{coffeelib.version}"
     jasmine: "^6.1.0"
+    "@ch1c0t/ext": "^0.2.2"
 
 jsonify spec

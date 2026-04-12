@@ -7,7 +7,7 @@ beforeAll ->
           pass
           message: "Expected #{actual} #{if pass then 'not to' else 'to'} exist."
         }
-    startsWith: ->
+    toStartWith: ->
       compare: (string, prefix) ->
         pass = string.startsWith prefix
         {
@@ -18,7 +18,7 @@ beforeAll ->
             else
               "Expected '#{string}' to start with '#{prefix}'"
         }
-    endsWith: ->
+    toEndWith: ->
       compare: (string, suffix) ->
         pass = string.endsWith suffix
         {

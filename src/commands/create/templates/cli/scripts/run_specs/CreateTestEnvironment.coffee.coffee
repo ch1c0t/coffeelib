@@ -1,10 +1,12 @@
+"""
 { CreateJasmine } = require './CreateJasmine.coffee'
 { CreateTmpDirectory } = require './CreateTmpDirectory.coffee'
 { ResolvePathToCLI } = require './ResolvePathToCLI.coffee'
 
-exports.CreateEnvironment = ->
+exports.CreateTestEnvironment = ->
   jasmine = CreateJasmine()
-  tmp = await CreateTmpDirectory()
+  dir = await CreateTmpDirectory()
   cli = ResolvePathToCLI()
 
-  { jasmine, tmp, cli }
+  { jasmine, dir, cli }
+"""
