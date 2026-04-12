@@ -8,7 +8,7 @@ exports.CreateFileTree = (variables) ->
   if template.exists
     project = await CreateProject { name, template }
     for file in template.files
-      pathToNewFile = project.create_new_file_from file
+      pathToNewFile = await project.create_new_file_from file
       console.log pathToNewFile
     project.dir
   else
