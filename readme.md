@@ -22,15 +22,16 @@ This makes adding new commands easier.
 
 Inside of a project directory, you can use
 
+- `npm start`;
+- `npm run build`;
 - `npm test`;
-- `coffeelib build`;
-- `coffeelib watch`;
 
-### `npm test`
+### `npm start`
 
-is to run the tests. All `coffeelib` templates go together with means to create test environments.
+is to build the project on startup, and then
+rebuild it when the sources in the `src` directory change.
 
-### `coffeelib build`(or `npm run build`)
+### `npm run build`
 
 is to build the project. It compiles the sources in the `src` directory to the `lib` directory.
 
@@ -39,10 +40,10 @@ This allows to use the library both with `require` and `import`.
 
 [wrapper]: https://nodejs.org/api/packages.html#packages_writing_dual_packages_while_avoiding_or_minimizing_hazards
 
-### `coffeelib watch`(or `npm start`)
+### `npm test`
 
-is to build the project on startup, and then
-rebuild it when the sources in the `src` directory change.
+is to run the tests. All `coffeelib` templates go together with passing tests
+and means to evolve test environments.
 
 ### Usage examples
 
