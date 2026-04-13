@@ -9,6 +9,7 @@ exports.watch = ->
 
   watcher = chokidar.watch SRC
   watcher.on 'all', (event, path) ->
+    console.log event, path
     if event in ['add', 'change']
       switch path
         when "#{SRC}/main.coffee"
