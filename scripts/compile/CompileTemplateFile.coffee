@@ -1,7 +1,11 @@
-{ dirname } = require 'path'
+{ dirname, basename } = require 'path'
 require '@ch1c0t/io'
 { compile } = require 'coffeescript'
 require './String'
+
+hidden_files = [
+  '.nvim.sock'
+]
 
 exports.CompileTemplateFile = (file) ->
   relative_path_to_file = file.delete_prefix "#{SRC}/"
@@ -17,4 +21,5 @@ exports.CompileTemplateFile = (file) ->
     js = compile code, bare: true
     await IO.write path_to_new_file, js
   else
-    await IO.copy file, path_to_new_file
+    unless (basename file) in hidden_files
+      await IO.copy file, path_to_new_file
