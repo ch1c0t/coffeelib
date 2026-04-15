@@ -1,5 +1,3 @@
-{ sh } = require '@ch1c0t/sh'
-
 global.ItCreatesPackageWithCLI = ->
   beforeAll ->
     @packageDir = "#{ENV.tmp}/#{@name}"

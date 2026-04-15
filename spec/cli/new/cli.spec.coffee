@@ -4,3 +4,4 @@ describe 'new cli', ->
     @response = await RunCLI "new #{@name} cli"
 
   ItCreatesPackageWithCLI()
+  ItCreatesGitRepository()

@@ -4,3 +4,4 @@ describe 'new rpc', ->
     @response = await RunCLI "new #{@name} rpc"
 
   ItCreatesPackageWithCLI()
+  ItCreatesGitRepository()
