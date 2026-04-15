@@ -5,3 +5,6 @@ String::delete_prefix = (prefix) ->
 String::delete_suffix = (suffix) ->
   if @endsWith suffix
     @slice 0, -suffix.length
+
+String::replace_suffix = (old_suffix, new_suffix) ->
+  (@.delete_suffix old_suffix) + new_suffix
