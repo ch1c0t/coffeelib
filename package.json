@@ -27,7 +27,7 @@
     "glob": "^13.0.6"
   },
   "devDependencies": {
-    "@ch1c0t/ext": "^0.2.2",
+    "@ch1c0t/ext": "^0.2.5",
     "jasmine": "^6.1.0"
   }
 }
