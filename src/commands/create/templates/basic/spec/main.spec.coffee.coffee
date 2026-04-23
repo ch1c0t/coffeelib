@@ -1,8 +1,7 @@
 """
-{ some } = require '#{project.name}'
+{ Task } = require '#{project.name}'
 
 describe 'main', ->
-  it 'returns some string', ->
-    string = some()
-    expect(string).toBe 'some string'
+  it 'provides the Task function', ->
+    expect(typeof Task).toBe 'function'
 """

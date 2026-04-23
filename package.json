@@ -19,7 +19,7 @@
     "test": "coffee scripts/run_specs.coffee"
   },
   "dependencies": {
-    "@ch1c0t/bow": "^0.0.0",
+    "@ch1c0t/bow": "^0.0.1",
     "@ch1c0t/io": "^0.0.7",
     "@ch1c0t/sh": "^0.0.1",
     "chokidar": "^4.0.3",

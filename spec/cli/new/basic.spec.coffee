@@ -7,6 +7,8 @@ describe 'new library', ->
     expect(@response.error).toBe null
 
     response = await RunSpecsIn "#{ENV.tmp}/#{@name}"
-    expect(response.error).toBe null
+    expect(response.error)
+      .withContext response.stdout
+      .toBe null
 
   ItCreatesGitRepository()
