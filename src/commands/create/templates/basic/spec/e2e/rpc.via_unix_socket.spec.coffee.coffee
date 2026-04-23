@@ -12,4 +12,8 @@ describe 'making RPC requests via Unix sockets', ->
       socket: socket_path
 
   ItCanInteractWithCoffeeScriptRPC()
+
+  it '@server, an instance of Task, provides access to socket_path', ->
+    { socket_path } = @server.data
+    expect(socket_path).toStartWith TE.dir
 """
