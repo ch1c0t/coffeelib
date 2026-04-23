@@ -21,5 +21,7 @@ spec =
     coffeelib: "^#{coffeelib.version}"
     jasmine: "^6.1.0"
     "@ch1c0t/ext": "^0.2.5"
+    "hobby-rpc.server": "^0.1.2"
+    "hobby-rpc.client": "^0.0.0"
 
 jsonify spec
