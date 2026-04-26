@@ -3,8 +3,10 @@
 { CreateTmpDirectory } = require './CreateTmpDirectory.coffee'
 
 exports.CreateTestEnvironment = ->
+  await Promise.resolve()
+
   {
     jasmine: CreateJasmine()
-    dir: await CreateTmpDirectory()
+    dir: CreateTmpDirectory()
   }
 """

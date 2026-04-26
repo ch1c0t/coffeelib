@@ -17,7 +17,7 @@ spec =
     test: "coffee scripts/run_specs.coffee"
   devDependencies:
     coffeelib: "^#{coffeelib.version}"
-    jasmine: "^6.1.0"
-    "@ch1c0t/ext": "^0.2.2"
+    jasmine: "^6.2.0"
+    "@ch1c0t/ext": "^0.3.0"
 
 jsonify spec

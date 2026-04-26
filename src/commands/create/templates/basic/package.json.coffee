@@ -19,8 +19,8 @@ spec =
     "@ch1c0t/bow": "^0.0.1"
   devDependencies:
     coffeelib: "^#{coffeelib.version}"
-    jasmine: "^6.1.0"
-    "@ch1c0t/ext": "^0.2.5"
+    jasmine: "^6.2.0"
+    "@ch1c0t/ext": "^0.3.0"
     "hobby-rpc.server": "^0.1.2"
     "hobby-rpc.client": "^0.0.0"
 

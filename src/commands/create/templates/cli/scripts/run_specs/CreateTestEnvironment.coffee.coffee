@@ -4,9 +4,11 @@
 { ResolvePathToCLI } = require './ResolvePathToCLI.coffee'
 
 exports.CreateTestEnvironment = ->
+  await Promise.resolve()
+
   {
     jasmine: CreateJasmine()
     cli: ResolvePathToCLI()
-    dir: await CreateTmpDirectory()
+    dir: CreateTmpDirectory()
   }
 """
