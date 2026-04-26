@@ -1,4 +1,5 @@
 require './String'
+{ read } = IO.sync
 
 exports.TemplateFile = bow
   init: ({ path, template_path}) ->
@@ -14,4 +15,4 @@ exports.TemplateFile = bow
     endsWith: (suffix) ->
       @path.endsWith suffix
     read: ->
-      IO.read @path
+      read @path

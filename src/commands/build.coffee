@@ -1,9 +1,10 @@
 { BuildMain } = require './build/main'
 { BuildRest } = require './build/rest'
 
+{ mkdir } = IO.sync
 exports.build = ->
-  await IO.ensure SRC
-  await IO.ensure LIB
+  mkdir SRC
+  mkdir LIB
 
-  await BuildMain()
-  await BuildRest()
+  BuildMain()
+  BuildRest()

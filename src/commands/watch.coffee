@@ -5,7 +5,7 @@ chokidar = require 'chokidar'
 { BuildMain } = require './build/main'
 
 exports.watch = ->
-  await build()
+  build()
 
   watcher = chokidar.watch SRC
   watcher.on 'all', (event, path) ->
@@ -13,6 +13,6 @@ exports.watch = ->
     if event in ['add', 'change']
       switch path
         when "#{SRC}/main.coffee"
-          await BuildMain()
+          BuildMain()
         else
-          await BuildFile path
+          BuildFile path

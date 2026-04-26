@@ -1,17 +1,18 @@
+{ read, write } = IO.sync
 { compile } = require 'coffeescript'
 
 BuildMain = ->
-  source = await IO.read "#{SRC}/main.coffee"
+  source = read "#{SRC}/main.coffee"
   output = compile source
-  IO.write "#{LIB}/main.js", output
-  await BuildESM source
+  write "#{LIB}/main.js", output
+  BuildESM source
 
 BuildESM = (source) ->
   names = FindNames source
   lines = names.map (name) ->
     "export const #{name} = m.#{name}"
 
-  await IO.write "#{LIB}/esm.mjs", [
+  write "#{LIB}/esm.mjs", [
     "import m from './main.js'"
     lines...
   ].join "\n"

@@ -3,8 +3,10 @@
 { ResolvePathToCLI } = require './ResolvePathToCLI.coffee'
 
 exports.CreateEnvironment = ->
+  await Promise.resolve()
+
   jasmine = CreateJasmine()
-  tmp = await CreateTmpDirectory()
+  tmp = CreateTmpDirectory()
   cli = ResolvePathToCLI()
 
   { jasmine, tmp, cli }
