@@ -28,6 +28,6 @@
   },
   "devDependencies": {
     "@ch1c0t/ext": "^0.3.0",
-    "jasmine": "^6.1.0"
+    "jasmine": "^6.2.0"
   }
 }
