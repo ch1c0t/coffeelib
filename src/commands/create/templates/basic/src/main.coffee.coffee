@@ -1,36 +1,38 @@
 """
-{ fork } = require 'child_process'
-{ bow } = require '@ch1c0t/bow'
+exports.f = (first, second) ->
+  if first and second
+    name = first
+    spec = second
+  else
+    spec = first
 
-exports.Task = bow
-  methods:
-    stop: ->
-      try
-        process.kill @pid
-      catch error
-        if error.code is 'ESRCH'
-          # ESRCH: The task PID does not exist.
+  fn = (input) ->
+    input ?= {}
+
+    state = {}
+    state.props = {}
+
+    for own key, value of spec.in
+      if typeof value is 'function'
+        transform = value
+        if transform.length is 0
+          prop = transform.call input[key]
         else
-          console.error error
-    start: ->
-      new Promise (resolve, reject) =>
-        cwd = @inside_of or process.cwd()
-        @child = fork @run, @args,
-          cwd: cwd
-        @child.once 'message', (data) =>
-          @data = data
-          if data.pid
-            @pid = data.pid
-            resolve @pid
-        @child.once 'error', (error) -> reject error
-        @child.once 'exit', (code) ->
-          if code isnt 0
-            reject new Error "Exit code: \#{code}"
-  init:
-    run: -> @value
-    args: -> @value or []
-    inside_of: -> @value
-  setup: ->
-    await @start()
-    @
+          prop = transform input[key]
+      else
+        default_value = value
+        value = input[key]
+        prop = if value? then value else default_value
+      state[key] = state.props[key] = prop
+
+    { out } = spec
+    if out
+      out.call state
+    else
+      state.props
+
+  if name
+    global[name] = fn
+  else
+    fn
 """
