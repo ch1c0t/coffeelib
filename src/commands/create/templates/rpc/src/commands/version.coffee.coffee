@@ -6,5 +6,6 @@ printVersion = ->
 
 module.exports = {
   printVersion
+  version
 }
 """
