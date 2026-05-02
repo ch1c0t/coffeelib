@@ -14,3 +14,13 @@ exports.test = ->
     .catch (error) ->
       console.error error
       process.exit 3
+    .finally ->
+      for task in TE.tasks
+        { pid } = task
+        try
+          process.kill pid
+        catch error
+          # ESRCH: The task PID does not exist.
+          unless error.code is 'ESRCH'
+            console.error error
+          continue

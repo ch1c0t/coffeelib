@@ -5,12 +5,9 @@
 exports.CreateTestEnvironment = ->
   await Promise.resolve()
 
-  dir = CreateTmpDirectory()
-  jasmine = CreateJasmine()
-  cli = ResolvePathToCLI()
-
   {
-    dir
-    jasmine
-    cli
+    dir: CreateTmpDirectory()
+    jasmine: CreateJasmine()
+    cli: ResolvePathToCLI()
+    tasks: []
   }
