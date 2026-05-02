@@ -14,6 +14,9 @@ exports.run = ->
     when 'build'
       { build } = require './commands/build'
       build()
+    when 'test'
+      { test } = require './commands/test'
+      test()
     when 'version', '--version', '-v'
       { version } = require '../package.json'
       console.log version
