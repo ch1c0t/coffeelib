@@ -50,6 +50,7 @@ and means to evolve test environments.
 - https://github.com/ch1c0t/fun
 - https://github.com/ch1c0t/pascalize.lispcase
 - https://github.com/ch1c0t/hyphenate.pascalcase
+- https://github.com/ch1c0t/hobby-rpc.clients.nodejs
 
 ## Development
 
