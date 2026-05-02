@@ -2,7 +2,7 @@
   "name": "coffeelib",
   "description": "A tool to create isomorphic projects with CoffeeScript",
   "bin": "./bin/coffeelib",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "author": "Anatoly Chernov <chertoly@gmail.com>",
   "license": "0BSD",
   "repository": {
@@ -20,14 +20,12 @@
   },
   "dependencies": {
     "@ch1c0t/bow": "^0.0.1",
+    "@ch1c0t/ext": "^0.3.3",
     "@ch1c0t/io": "^0.1.0",
     "@ch1c0t/sh": "^0.0.1",
     "chokidar": "^4.0.3",
     "coffeescript": "^2.7.0",
-    "glob": "^13.0.6"
-  },
-  "devDependencies": {
-    "@ch1c0t/ext": "^0.3.0",
+    "glob": "^13.0.6",
     "jasmine": "^6.2.0"
   }
 }
