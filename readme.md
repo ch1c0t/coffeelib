@@ -20,6 +20,8 @@ It provides a CLI which implements common commands(like `help`, `version`, `-v`,
 and a setup based on [Jasmine](https://jasmine.github.io/), which shows how to test these commands.
 This makes adding new commands easier.
 
+`coffeelib new name rpc` creates a CLI project which provides an RPC service over [this protocol][hobby-rpc.protocol].
+
 Inside of a project directory, you can use
 
 - `npm start`;
@@ -39,6 +41,7 @@ It creates automatically [a ES module wrapper for a CommonJS module][wrapper].
 This allows to use the library both with `require` and `import`.
 
 [wrapper]: https://nodejs.org/api/packages.html#packages_writing_dual_packages_while_avoiding_or_minimizing_hazards
+[hobby-rpc.protocol]: https://github.com/ch1c0t/hobby-rpc.protocol
 
 ### `npm test`
 
