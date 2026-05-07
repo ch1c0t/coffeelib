@@ -1,6 +1,6 @@
 ## Introduction
 
-`coffeelib` is a tool to create isomorphic projects with CoffeeScript. You can install it globally with
+`coffeelib` is a tool to create with CoffeeScript. You can install it globally with
 
 ```
 npm install coffeelib -g
@@ -51,6 +51,7 @@ and means to evolve test environments.
 - https://github.com/ch1c0t/pascalize.lispcase
 - https://github.com/ch1c0t/hyphenate.pascalcase
 - https://github.com/ch1c0t/hobby-rpc.clients.nodejs
+- https://github.com/ch1c0t/hobby-rpc.servers.nodejs
 
 ## Development
 

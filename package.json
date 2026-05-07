@@ -1,8 +1,8 @@
 {
   "name": "coffeelib",
-  "description": "A tool to create isomorphic projects with CoffeeScript",
+  "description": "A tool to create with CoffeeScript",
   "bin": "./bin/coffeelib",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "author": "Anatoly Chernov <chertoly@gmail.com>",
   "license": "0BSD",
   "repository": {

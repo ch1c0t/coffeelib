@@ -1,6 +1,6 @@
 exports.printHelp = ->
   console.log """
-    A tool to create isomorphic projects with CoffeeScript.
+    A tool to create with CoffeeScript.
 
       new NAME [TEMPLATE]
         Create the directory named NAME and a new project inside of it.
