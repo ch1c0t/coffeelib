@@ -10,6 +10,6 @@ exports.run = ->
       { printHelp } = require './commands/help'
       printHelp()
     else
-      { printHelp } = require './commands/help'
-      printHelp()
+      { start } = require './commands/start'
+      start()
 """

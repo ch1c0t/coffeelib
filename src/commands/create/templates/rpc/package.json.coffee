@@ -15,7 +15,12 @@ spec =
     build: "coffeelib build"
     start: "coffeelib watch"
     test: "coffeelib test"
+  dependencies:
+    "hobby-rpc.server": "^0.1.2"
   devDependencies:
     coffeelib: "^#{coffeelib.version}"
+    "hobby-rpc.client": "^0.0.2"
+    "hobby-rpc": "^0.2.1"
+
 
 jsonify spec
