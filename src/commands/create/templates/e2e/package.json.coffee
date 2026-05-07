@@ -16,7 +16,7 @@ spec =
     start: "coffeelib watch"
     test: "coffeelib test"
   dependencies:
-    "@ch1c0t/bow": "^0.0.1"
+    "@ch1c0t/bow": "^0.1.0"
   devDependencies:
     coffeelib: "^#{coffeelib.version}"
     "hobby-rpc.server": "^0.1.2"

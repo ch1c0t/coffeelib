@@ -27,9 +27,9 @@ exports.Task = bow
           if code isnt 0
             reject new Error "Exit code: \#{code}"
   init:
-    run: -> @value
-    args: -> @value or []
-    inside_of: -> @value
+    run: null
+    args: []
+    inside_of: null
   setup: ->
     await @start()
     @

@@ -3,9 +3,9 @@ require './helpers'
 
 exports.Project = bow
   init:
-    name: -> @value
-    template: -> @value
-    dir: -> @value
+    name: null
+    template: null
+    dir: null
   methods:
     create_new_file_from: (template_file) ->
       project_file = ProjectFile template_file.transpose_to @dir
