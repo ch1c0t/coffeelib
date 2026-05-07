@@ -1,3 +1,4 @@
+require 'coffeescript/register'
 require '@ch1c0t/ext'
 
 { CreateTestEnvironment } = require './test/CreateTestEnvironment'
