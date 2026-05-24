@@ -5,13 +5,16 @@ global.SRC = "#{CWD}/src"
 global.LIB = "#{CWD}/lib"
 
 { dirname } = require 'path'
+path = dirname __dirname
 
 package_spec = require '../package.json'
 { version } = package_spec
 
+
 global.COFFEELIB = global.coffeelib = {
+  path
   version
-  path: dirname __dirname
+  version_or_path: if version.endsWith 'dev' then "file:#{path}" else "^#{version}"
 }
 
 global.glob = require 'glob'

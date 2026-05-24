@@ -1,4 +1,7 @@
 NPM_INSTALL_OPTIONS = process.env.NPM_INSTALL_OPTIONS or "--prefer-offline"
+if coffeelib.version.endsWith 'dev'
+  NPM_INSTALL_OPTIONS = "#{NPM_INSTALL_OPTIONS} --install-links"
+
 NPM_INSTALL_COMMAND = "npm install #{NPM_INSTALL_OPTIONS}"
 
 exports.RunCommands = ({ inside_of })->

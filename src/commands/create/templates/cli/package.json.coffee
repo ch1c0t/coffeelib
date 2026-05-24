@@ -16,6 +16,6 @@ spec =
     start: "coffeelib watch"
     test: "coffeelib test"
   devDependencies:
-    coffeelib: "^#{coffeelib.version}"
+    coffeelib: coffeelib.version_or_path
 
 jsonify spec
