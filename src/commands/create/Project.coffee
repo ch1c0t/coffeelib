@@ -10,10 +10,9 @@ exports.Project = bow
     create_new_file_from: (template_file) ->
       project_file = ProjectFile template_file.transpose_to @dir
 
-      if template_file.endsWith '.js'
-        code = await template_file.read()
+      if template_file.is_evaluable()
         project = @
-        output = eval code
+        output = await template_file.output_for { project }
 
         if text = output.text
           if filename = output.filename
