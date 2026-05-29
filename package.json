@@ -14,8 +14,8 @@
     "isomorphic"
   ],
   "scripts": {
-    "build": "coffee scripts/compile.coffee",
-    "start": "coffee scripts/watch.coffee",
+    "build": "coffee --compile --output lib src",
+    "start": "coffee --watch --compile --output lib src",
     "test": "coffee scripts/run_specs.coffee"
   },
   "dependencies": {
