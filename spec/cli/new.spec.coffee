@@ -3,4 +3,4 @@ describe 'new', ->
     response = await RunCLI "new some_package_name non_existent_template_name"
     expect(response.error.message).toStartWith "Command failed"
     expect(response.stderr).toStartWith "No template directory was found at"
-    expect(response.stderr).toEndWith "lib/commands/create/templates/non_existent_template_name\n"
+    expect(response.stderr).toEndWith "node_modules/coffeelib.templates/lib/non_existent_template_name\n"

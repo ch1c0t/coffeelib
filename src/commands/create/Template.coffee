@@ -5,7 +5,7 @@
 exports.Template = bow
   init: (input) ->
     @name = input
-    @path = "#{COFFEELIB.path}/lib/commands/create/templates/#{input}"
+    @path = "#{COFFEELIB.path}/node_modules/coffeelib.templates/lib/#{input}"
     
     if exists @path
       @exists = true
