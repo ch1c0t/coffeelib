@@ -7,11 +7,13 @@ exports.Project = bow
     template: null
     dir: null
   setup: ->
-    for template_file in @template.files
-      path_to_project_file = await @create_new_file_from template_file
-      console.log path_to_project_file
+    await @create_files()
     @
   methods:
+    create_files: ->
+      for template_file in @template.files
+        path_to_project_file = await @create_new_file_from template_file
+        console.log path_to_project_file
     create_new_file_from: (template_file) ->
       project_file = ProjectFile template_file.transpose_to @dir
 
