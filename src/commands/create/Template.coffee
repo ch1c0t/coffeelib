@@ -4,23 +4,33 @@
 
 exports.Template = bow
   init: (input) ->
-    @name = input
-    @path = "#{COFFEELIB.path}/node_modules/coffeelib.templates/lib/#{input}"
+    path = "#{COFFEELIB.path}/node_modules/coffeelib.templates/lib/#{input}"
     
-    if exists @path
+    if exists path
       @exists = true
-      @ext = '.js'
+      ext = '.js'
     else if exists input
       @exists = true
-      @ext = '.coffee'
-      @path = input
+      ext = '.coffee'
+      path = input
     else
-      @error = "No template directory was found at #{@path}"
+      @error = "No template directory was found at #{path}"
 
     if @exists
-      files = glob.sync "#{@path}/**/*", nodir: yes
+      metafile = "#{path}/template.coffee"
+
+      if exists metafile
+        @metafile = metafile
+
+        @type = 'complex'
+        base = "#{path}/base"
+      else
+        @type = 'simple'
+        base = path
+
+      files = glob.sync "#{base}/**/*", nodir: yes
       @files = for file in files
         TemplateFile
-          ext: @ext
+          ext: ext
           path: file
-          template_path: @path
+          template_path: base

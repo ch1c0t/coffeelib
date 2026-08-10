@@ -7,7 +7,23 @@ exports.Project = bow
     template: null
     dir: null
   setup: ->
-    await @create_files()
+    switch @template.type
+      when 'simple'
+        await @create_files()
+      when 'complex'
+        { compile } = require 'coffeescript'
+        { read } = IO.sync
+        { metafile } = @template
+
+        code = await read metafile
+        project = @
+
+        metafile_output = eval compile code, bare: true
+
+        if typeof metafile_output is 'function'
+          metafile_output.call @
+
+        await @create_files()
     @
   methods:
     create_files: ->
