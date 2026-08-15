@@ -20,11 +20,11 @@
   },
   "dependencies": {
     "@ch1c0t/bow": "^0.1.0",
-    "@ch1c0t/ext": "^0.4.0",
+    "@ch1c0t/ext": "^0.4.1",
     "@ch1c0t/io": "^0.1.0",
     "@ch1c0t/sh": "^0.0.1",
     "chokidar": "^4.0.3",
-    "coffeelib.templates": "^0.1.1",
+    "coffeelib.templates": "^0.1.2",
     "coffeescript": "^2.7.0",
     "glob": "^13.0.6",
     "jasmine": "^6.2.0"

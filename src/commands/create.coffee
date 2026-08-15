@@ -7,7 +7,7 @@ global.bow = bow
 { CreateFileTree } = require './create/CreateFileTree'
 { RunCommands } = require './create/RunCommands'
 
-exports.create = ({ name, template = 'default' }) ->
+exports.create = ({ name, template = 'lib' }) ->
   dir = await CreateFileTree {
     name
     template
