@@ -9,9 +9,7 @@ default_config =
   helpers: [
     'helpers/**/*.coffee'
   ]
-  stopSpecOnExpectationFailure: no
   jsLoader: 'require'
-  random: yes
 
 exports.CreateJasmine = ->
   jasmine = new Jasmine()
