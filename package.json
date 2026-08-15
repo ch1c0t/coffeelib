@@ -2,7 +2,7 @@
   "name": "coffeelib",
   "description": "A tool to create with CoffeeScript",
   "bin": "./bin/coffeelib",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "author": "Anatoly Chernov <chertoly@gmail.com>",
   "license": "0BSD",
   "repository": {
