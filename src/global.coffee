@@ -14,7 +14,6 @@ package_spec = require '../package.json'
 global.COFFEELIB = global.coffeelib = {
   path
   version
-  version_or_path: if version.endsWith 'dev' then "file:#{path}" else "^#{version}"
 }
 
 global.glob = require 'glob'
