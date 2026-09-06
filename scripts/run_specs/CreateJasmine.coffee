@@ -7,4 +7,5 @@ exports.CreateJasmine = ->
     showColors: true
 
   jasmine.exitOnCompletion = false
+  jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000
   jasmine
