@@ -12,6 +12,10 @@ exports.RunCommands = ({ inside_of })->
     await sh NPM_INSTALL_COMMAND, cwd: dir
     await sh 'npm run build', cwd: dir
 
+  if exists "#{dir}/Gemfile"
+    await sh 'bundle install', cwd: dir
+    await sh 'bundle exec rake', cwd: dir
+
   await CreateGitRepository inside_of: dir
 
 CreateGitRepository = ({ inside_of }) ->
