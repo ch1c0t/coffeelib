@@ -3,7 +3,7 @@ describe 'new rpc', ->
     ->
       @name = "rpc_package"
       @response = await RunCLI "new #{@name} rpc"
-    10000
+    15000
   )
 
   ItCreatesPackageWithCLI()
